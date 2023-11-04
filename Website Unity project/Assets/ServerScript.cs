@@ -33,11 +33,13 @@ public class ServerScript : MonoBehaviour
         yield return www.SendWebRequest();
 
         if (www.result != UnityWebRequest.Result.Success)
+        {
             Debug.Log(www.error);
+        }
         else
         {
             Debug.Log(www.downloadHandler.text);
-            resText.text = Random.Range(0.01f, 0.56f).ToString();
+            resText.text = www.downloadHandler.text;
         }
     }
 }
